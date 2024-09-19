@@ -9,6 +9,16 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>22</maven.compiler.source>
         <maven.compiler.target>22</maven.compiler.target>
-        <exec.mainClass>com.mycompany.primary_school.Primary_school</exec.mainClass>
+        <exec.mainClass>com.mycompany.primary_school.main</exec.mainClass>
     </properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.formdev</groupId> 
+            <artifactId>flatlaf</artifactId>
+            <version>3.5.1</version>
+        </dependency>
+        <dependency
+             <groupId></groupId>
+        </dependency>
+    </dependencies>
 </project>
