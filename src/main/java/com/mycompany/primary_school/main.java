@@ -7,7 +7,7 @@ package com.mycompany.primary_school;
 import com.formdev.flatlaf.FlatLightLaf;
 import javax.swing.UIManager;
 import screen.home;
-
+import dao.query;
 /**
  *
  * @author Dell
@@ -19,7 +19,12 @@ public class main {
         UIManager.put( "Button.arc", 999 );
             
         System.out.println("Hello World!");
-        home home_screen = new home();
-        home_screen.setVisible(true);
+        
+        query myquery = new query();
+        myquery.insert();
+//        home home_screen = new home();
+//        home_screen.setVisible(true);
+        
+        
     }
 }
