@@ -10,8 +10,10 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.UIManager;
 import screen.matricula;
-import screen.student;
-import screen.curso;
+import screen.registerStudent;
+import screen.listStudents;
+import screen.subject;
+import screen.registerSubject;
 /**
  *
  * @author Dell
@@ -44,13 +46,19 @@ public class home extends javax.swing.JFrame {
 
         background = new javax.swing.JPanel();
         menuLateral = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
         header = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         titulo_home = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,21 +68,15 @@ public class home extends javax.swing.JFrame {
         menuLateral.setPreferredSize(new java.awt.Dimension(270, 640));
         menuLateral.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Primary school ");
-        menuLateral.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(83, 60, 140, 30));
-
         jButton2.setBackground(new java.awt.Color(255, 102, 102));
-        jButton2.setText("Estudiante");
+        jButton2.setText("Listado de estudinates");
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        menuLateral.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 270, 62));
+        menuLateral.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, 270, 40));
 
         jButton3.setBackground(new java.awt.Color(255, 102, 102));
         jButton3.setText("Curso");
@@ -84,7 +86,7 @@ public class home extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        menuLateral.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 270, 60));
+        menuLateral.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 560, 270, 50));
 
         jButton4.setBackground(new java.awt.Color(255, 102, 102));
         jButton4.setText("Matricula");
@@ -95,7 +97,47 @@ public class home extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        menuLateral.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 270, 59));
+        menuLateral.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 610, 270, 59));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Estudiantes");
+        menuLateral.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Gestión de notas");
+        menuLateral.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 520, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Registro");
+        menuLateral.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Administración de ");
+        menuLateral.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, -1, -1));
+
+        jButton1.setBackground(new java.awt.Color(255, 102, 102));
+        jButton1.setText("Registro de matería");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        menuLateral.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 270, 40));
+
+        jButton5.setBackground(new java.awt.Color(255, 102, 102));
+        jButton5.setText("Registro de estudiantes");
+        jButton5.setAutoscrolls(true);
+        jButton5.setBorderPainted(false);
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        menuLateral.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 270, 40));
 
         header.setBackground(new java.awt.Color(204, 204, 204));
         header.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -108,7 +150,7 @@ public class home extends javax.swing.JFrame {
         );
         headerLayout.setVerticalGroup(
             headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -126,6 +168,10 @@ public class home extends javax.swing.JFrame {
         titulo_home.setText("Bienvenido!");
         titulo_home.setPreferredSize(new java.awt.Dimension(20, 50));
 
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setText("Primary school ");
+
         javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
         background.setLayout(backgroundLayout);
         backgroundLayout.setHorizontalGroup(
@@ -134,18 +180,22 @@ public class home extends javax.swing.JFrame {
                 .addComponent(menuLateral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(backgroundLayout.createSequentialGroup()
                         .addGap(47, 47, 47)
-                        .addComponent(titulo_home, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(titulo_home, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))))
         );
         backgroundLayout.setVerticalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(menuLateral, javax.swing.GroupLayout.DEFAULT_SIZE, 639, Short.MAX_VALUE)
+            .addComponent(menuLateral, javax.swing.GroupLayout.DEFAULT_SIZE, 710, Short.MAX_VALUE)
             .addGroup(backgroundLayout.createSequentialGroup()
-                .addGap(111, 111, 111)
+                .addGap(46, 46, 46)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
                 .addComponent(titulo_home, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(105, 105, 105)
+                .addGap(112, 112, 112)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -168,32 +218,47 @@ public class home extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+      //listStudents rstu = new listStudents(); 
+       //stu.setVisible(true);
         
-        student es =new student();
-       es.setVisible(true);
-        
-        
+      listStudents registerStudent = new listStudents();
+        registerStudent.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-         
-        jButton4.setBackground(Color.white  ); 
-         setLayout(new FlowLayout());  // Usa un layout simple para organizar el botón
-        add(jButton4);    
-      matricula ma =new matricula();
-       ma.setVisible(true);
-        
-        
-    }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-         curso cu =new curso();
+         subject cu =new subject();
        cu.setVisible(true);
         
         
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+
+        jButton4.setBackground(Color.white  );
+        setLayout(new FlowLayout());  // Usa un layout simple para organizar el botón
+        add(jButton4);
+        matricula ma =new matricula();
+        ma.setVisible(true);
+
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        
+        registerSubject registerStudent = new registerSubject();
+        registerStudent.setVisible(true); 
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        registerStudent register_screen = new registerStudent();
+        register_screen.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -238,10 +303,16 @@ public class home extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;
     private javax.swing.JPanel header;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel menuLateral;
     public javax.swing.JLabel titulo_home;
