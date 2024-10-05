@@ -4,6 +4,10 @@
  */
 package screen;
 
+import dao.query;
+import javax.swing.JOptionPane;
+import models.Subject;
+
 /**
  *
  * @author Dell
@@ -111,8 +115,22 @@ public class registerSubject extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
-        
+        String subjectName = jTextField1.getText();
+
+        // Crear una instancia de Subject
+        Subject newSubject = new Subject(0, subjectName); // El ID lo pones en 0 porque es autoincrementable
+
+        // Crear una instancia de la clase query
+        query dbQuery = new query();
+
+        // Insertar la materia en la base de datos
+        dbQuery.insertSubject(newSubject);
+
+        // Mostrar mensaje de éxito
+        JOptionPane.showMessageDialog(null, "Materia guardada con éxito!");
+        // Limpiar el JTextField después de guardar la materia
+        jTextField1.setText("");
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

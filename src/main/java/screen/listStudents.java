@@ -11,6 +11,8 @@ import javax.management.Query;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import models.Student;
+import models.Qualification;
+
 
 /**
  *
@@ -41,7 +43,7 @@ public void mostrarEstudiantesEnTabla(JTable tabla) {
     // Recorrer la lista de estudiantes y agregarlos al modelo de la tabla
     for (Student student : estudiantes) {
         Object[] fila = {
-             student.getIdStudent(),
+            student.getId_student(),
             student.getFirstName(),
             student.getMidleName(),
             student.getFirstSurname(),

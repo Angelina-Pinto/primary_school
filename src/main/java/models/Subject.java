@@ -12,6 +12,10 @@ public class Subject {
    private int  id_subject;
    private String subject_name;
    
+    public Subject() {
+        // Este constructor no hace nada, pero permite crear un objeto sin parámetros
+    }
+   
    public Subject(int id_subject,String subject_name){
         this.id_subject=id_subject;
         this.subject_name = subject_name;

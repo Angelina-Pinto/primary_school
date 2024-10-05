@@ -10,7 +10,7 @@ import java.sql.SQLException;
 
 /**
  *
- * @author Dell
+ * funcion que conecta tiene los datos de mi local host 
  */
 public class connectionDB {
     String dbUrl = "jdbc:mysql://localhost:3306/primarySchool";
